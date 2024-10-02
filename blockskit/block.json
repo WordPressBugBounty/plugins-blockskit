@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"name": "blockskit/image-effects",
+	"title": "Image Effects",
+	"category": "media",
+	"icon": "format-image",
+	"example": {},
+	"description": "Block to apply css filter effects to the image.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "blockskit",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
