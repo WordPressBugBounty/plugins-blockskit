@@ -6,7 +6,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
  * Description: An easy plugin to import starter sites and add different effects to the image.
  * Author: blockskitdev
  * Author URI: https://blockskit.com/
- * Version: 1.0.7
+ * Version: 1.0.8
  * Text Domain: blockskit
  * Domain Path:
  * Tested up to: 6.7
