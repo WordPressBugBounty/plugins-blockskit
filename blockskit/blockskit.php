@@ -6,10 +6,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
  * Description: An easy plugin to import starter sites and add different effects to the image.
  * Author: blockskitdev
  * Author URI: https://blockskit.com/
- * Version: 1.1.4
+ * Version: 1.1.5
  * Text Domain: blockskit
  * Domain Path: https://blockskit.com/free
- * Tested up to: 6.7
+ * Tested up to: 6.8
  *
  * Blockskit is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

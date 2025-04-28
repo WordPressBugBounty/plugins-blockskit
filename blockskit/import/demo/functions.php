@@ -216,7 +216,7 @@ class Bk_Import_Hooks {
      * Demo list of the Blockskit with their recommended plugins.
      *
      */
-    public function bk_import_demo_import_lists(){
+    public function bk_import_demo_import_lists( $demos ){
 
         $theme_slug = bk_import_get_theme_slug();
         $demo_lists = array();
@@ -529,7 +529,7 @@ class Bk_Import_Hooks {
                 $demo_lists = array();
             break;
         endswitch;
-        return $demo_lists;
+        return array_merge( $demo_lists, $demos );
     }
 
     /**
