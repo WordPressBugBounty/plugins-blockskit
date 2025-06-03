@@ -4,7 +4,7 @@ Tags: block, image block, demo data, one click demo import, demo data importer
 Requires at least: 5.9
 Tested up to: 6.8
 Requires PHP: 7.4.9
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -36,11 +36,15 @@ An easy plugin to import starter sites and add different effects to the image.
 Check all the available options inside Appearance > Demo Import
 
 == Screenshots ==
+
 1. Demo Import Page
 
 2. Block Setting
 
 == Changelog ==
+
+= 1.1.7 =
+* New demo compatibility update.
 
 = 1.1.6 =
 * New demo compatibility update.
