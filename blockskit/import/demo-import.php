@@ -24,6 +24,22 @@ function bk_import_get_theme_screenshot(){
 }
 
 /**
+ * Check active theme textdomain against passed string.
+ *
+ * @since    1.1.9
+ * 
+ * @param $needle Theme name substring.
+ * @return bool
+ */
+function bk_import_theme_check( $needle ){
+    if( strpos( bk_import_get_theme_slug(), $needle ) !== false  ){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+/**
  * The core plugin class that is used to define internationalization,admin-specific hooks, 
  * and public-facing site hooks..
  *
