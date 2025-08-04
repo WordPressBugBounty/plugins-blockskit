@@ -52,7 +52,8 @@ class Bk_Base_Install_Hooks {
                                 <div class="base-install-content"><h2 class="base-install-title">%1$s</h2><p>We recommend to %2$s %1$s theme as all our demo works perfectly with this theme. You can still try our demo on any block theme but it might not look as you see on our demo.</p></div>
                                 <div class="base-install-btn">
                                     <a class= "install-base-theme button button-primary">%2$s %1$s</a>
-                                    <a class= "close-base-notice button close-base-button">Skip</a>
+                                    <br>
+                                    <a class= "close-base-notice close-base-button">Skip</a>
                                 </div>
                             </div>
                             <div class="base-install-success">
@@ -60,6 +61,13 @@ class Bk_Base_Install_Hooks {
                                 <div class="base-install-btn">
                                     <a class= "close-base-notice button button-primary">Next</a>
                                 </div>
+                            </div>
+                            <div class="base-go-pro-blockskit-prompt">
+                                <div class="go-pro-description">
+                                <h2 class="blockskit-notice-title"> Upgrade to <a href="https://blockskit.com/pro/" target="_blank" class="blockskit-title">Blockskit Pro Plugin</a></h2>
+                                <P>Access the full Starter Site Library and build faster than ever.</p>
+                                </div>
+                                <a href="https://blockskit.com/pro/" class="btn-primary" target="_blank">Buy Now</a>
                             </div>
                         </div>
                     </div>',

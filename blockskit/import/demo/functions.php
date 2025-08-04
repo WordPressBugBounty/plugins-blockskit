@@ -22,6 +22,14 @@ class Bk_Import_Hooks {
     }
 
     /**
+     * Initialize the class and set its properties.
+     *
+     */
+    public function __construct() {
+        add_action( 'switch_theme', array( $this, 'flush_transient' ) );
+    }
+
+    /**
      * Check to see if advanced import plugin is not installed or activated.
      * Adds the Demo Import menu under Apperance.
      *
@@ -58,6 +66,14 @@ class Bk_Import_Hooks {
             'btn_text' => esc_html__( 'Processing...', 'blockskit' ),
             'nonce'    => wp_create_nonce( 'bk_import_nonce' )
         ) );
+    }
+
+    /**
+     * Deletes the demo upon theme switch.
+     *
+     */
+    public function flush_transient(){
+        delete_transient( 'bk_import_demo_lists' );
     }
 
     /**
@@ -211,8 +227,9 @@ class Bk_Import_Hooks {
     public function bk_import_demo_import_lists( $demos ){
 
         $demo_lists = array();
+        $theme_slug = bk_import_get_theme_slug();
         if( bk_import_theme_check( 'blockskit' ) ){
-            $list_url = "https://gitlab.com/api/v4/projects/46250773/repository/files/blockskit-demo-list%2Ejson?ref=master";
+            $list_url = "https://gitlab.com/api/v4/projects/46250773/repository/files/v2%2Fblockskit-demo-list%2Ejson?ref=master";
             while( empty( get_transient( 'bk_import_demo_lists' ) ) ){
                 $request_demo_list_body = wp_remote_retrieve_body( wp_remote_get( $list_url ) );
                 if( is_wp_error( $request_demo_list_body ) ) {
@@ -223,7 +240,15 @@ class Bk_Import_Hooks {
                 $demo_list_content = $demo_list_array['content'];
                 $demo_lists_json   = base64_decode( $demo_list_content );
                 $demo_lists        = json_decode( $demo_lists_json, true );
-                set_transient( 'bk_import_demo_lists', $demo_lists, DAY_IN_SECONDS );
+
+                $theme_sorted_list = array();
+                if( $theme_slug ){                
+                    $theme_list[$theme_slug] = isset( $demo_lists[$theme_slug] ) ? $demo_lists[$theme_slug] : array();
+                    $theme_list[$theme_slug.'-pro'] = isset( $demo_lists[$theme_slug.'-pro'] ) ? $demo_lists[$theme_slug.'-pro'] : array();
+                    $theme_sorted_list = array_merge( $theme_list, $demo_lists );
+                }
+
+                set_transient( 'bk_import_demo_lists', $theme_sorted_list, DAY_IN_SECONDS );
             }
             $demo_lists = get_transient( 'bk_import_demo_lists' );
         }

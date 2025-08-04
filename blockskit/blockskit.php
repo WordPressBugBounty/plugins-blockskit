@@ -6,7 +6,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
  * Description: An easy plugin to import starter sites and add different effects to the image.
  * Author: blockskitdev
  * Author URI: https://blockskit.com/
- * Version: 1.1.9
+ * Version: 1.2.0
  * Text Domain: blockskit
  * Domain Path: https://blockskit.com/free
  * Tested up to: 6.8
@@ -29,6 +29,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
  *
  * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/writing-your-first-block-type/
  */
+
+define( 'BLOCKSKIT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'BLOCKSKIT_PLUGIN_VERSION', '1.2.0');
+
 function create_block_bk_block_init() {
     register_block_type_from_metadata( __DIR__ );
 }
@@ -38,3 +42,6 @@ add_action( 'init', 'create_block_bk_block_init' );
  * Demo Import
  */
 require plugin_dir_path( __FILE__ ) . 'import/demo-import.php';
+
+// Blockskit Pro Admin Notice
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockskit-pro-upgrade-notice.php';
