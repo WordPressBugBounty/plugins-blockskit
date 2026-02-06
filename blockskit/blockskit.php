@@ -6,10 +6,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
  * Description: An easy plugin to import starter sites and add different effects to the image.
  * Author: blockskitdev
  * Author URI: https://blockskit.com/
- * Version: 1.2.0
+ * Version: 1.2.2
  * Text Domain: blockskit
  * Domain Path: https://blockskit.com/free
- * Tested up to: 6.8
+ * Tested up to: 6.9
  *
  * Blockskit is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
  */
 
 define( 'BLOCKSKIT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'BLOCKSKIT_PLUGIN_VERSION', '1.2.0');
+define( 'BLOCKSKIT_PLUGIN_VERSION', '1.2.2');
 
 function create_block_bk_block_init() {
     register_block_type_from_metadata( __DIR__ );
@@ -45,3 +45,7 @@ require plugin_dir_path( __FILE__ ) . 'import/demo-import.php';
 
 // Blockskit Pro Admin Notice
 require plugin_dir_path( __FILE__ ) . 'includes/class-blockskit-pro-upgrade-notice.php';
+
+// Advanced Import Override
+require plugin_dir_path(__FILE__) . 'includes/class-bk-advanced-import-override.php';
+new Bk_Advanced_Import_Override();

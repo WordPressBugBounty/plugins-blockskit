@@ -4,7 +4,7 @@ Tags: block, image block, demo data, one click demo import, demo data importer
 Requires at least: 5.9
 Tested up to: 6.8
 Requires PHP: 7.4.9
-Stable tag: 1.2.0
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,6 +42,12 @@ Check all the available options inside Appearance > Demo Import
 2. Block Setting
 
 == Changelog ==
+
+= 1.2.2 =
+* Theme recomendation in demo import updated.
+
+= 1.2.1 =
+* Base installation update.
 
 = 1.2.0 =
 * Demo importer style update.
